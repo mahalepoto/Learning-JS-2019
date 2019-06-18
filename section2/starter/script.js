@@ -582,5 +582,15 @@ john.calBmi();
 mark.calBmi();
 console.log(john);
 console.log(mark);
-// console.log(john.calBmi());
-// console.log(mark.calBmi());
+
+// console.log(john.calBmi()); If you call like this with console.log it returns 'undefined'.
+// console.log(mark.calBmi()); If you call like this with console.log it returns 'undefined'.
+
+// Comparing BMIs and printing results.
+if (john.johnBmi > mark.markBmi) {
+  console.log(john.fullName +' is fatter than ' + mark.fullName + ' and John\'s BMI is ' + john.johnBmi);
+} else if (john.johnBmi < mark.markBmi) {
+  console.log(mark.fullName + ' is fatter than ' +john.fullName + ' and Mark\'s BMI is ' + mark.markBmi);
+} else {
+  console.log('John and Mark both have same BMI, John\'s BMI is ' + john.johnBmi + 'Mark\'s BMI is ' + mark.johnBmi);
+}
