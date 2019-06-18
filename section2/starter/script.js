@@ -563,7 +563,7 @@ var john = {
   height : 1.828, // in meters
   calBmi : function (johnBmi) {
       this.johnBmi = this.mass / ( this.height * this.height);
-       return johnBmi;
+       return this.johnBmi;
   }
 };
 
@@ -573,18 +573,18 @@ var mark = {
   height : 1.524, // in meters
   calBmi : function (markBmi) {
       this.markBmi = this.mass / ( this.height * this.height);
-       return markBmi;
+       return this.markBmi;
   }
 };
 
 // testing
-john.calBmi();
-mark.calBmi();
-console.log(john);
-console.log(mark);
+// john.calBmi();
+// mark.calBmi();
+// console.log(john);
+// console.log(mark);
 
-// console.log(john.calBmi()); If you call like this with console.log it returns 'undefined'.
-// console.log(mark.calBmi()); If you call like this with console.log it returns 'undefined'.
+ console.log(john.calBmi()); //If you call like this with console.log it returns 'undefined'.
+ console.log(mark.calBmi()); //If you call like this with console.log it returns 'undefined'.
 
 // Comparing BMIs and printing results.
 if (john.johnBmi > mark.markBmi) {
@@ -593,4 +593,39 @@ if (john.johnBmi > mark.markBmi) {
   console.log(mark.fullName + ' is fatter than ' +john.fullName + ' and Mark\'s BMI is ' + mark.markBmi);
 } else {
   console.log('John and Mark both have same BMI, John\'s BMI is ' + john.johnBmi + 'Mark\'s BMI is ' + mark.johnBmi);
+}
+
+
+/* *** Loops and Iteration ***
+Secton 2: Lecture 29
+*/
+// Exmaple 1
+for (var i =0; i < 11; i++) {
+  console.log(i);
+}
+
+// Example 2
+for (var i =0; i < 20; i +=2) {
+  console.log(i);
+}
+
+// Example 3
+var john = ['John', 'Smith', 1990, 'Teacher', false];
+for (var i =0; i < john.length; i++) {
+  console.log(john[i]);
+
+}
+console.log(john.length); // checking array's length
+
+// ** Reverse looping **
+// Example one
+var john = ['John', 'Smith', 1990, 'Teacher', false];
+for (var i =4; i < john.length && i >=0; i--) {
+  console.log(john[i]);
+}
+
+// Example two
+var john = ['John1', 'Smith1', 1990, 'Teacher1', false];
+for (var i = john.length-1; i >=0; i--) {
+  console.log(john[i]);
 }
