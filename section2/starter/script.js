@@ -722,6 +722,7 @@ var johnEats = {
           var tip= johnEats.bills[i] * 0.15;
           console.log(tip); // for testing purpose only
           this.allTips.push(tip);
+          //this.totalPaid = this.allTips.push(tip) + johnEats.bills[i];
       } else {
          var tip = johnEats.bills[i] * 0.1;
          console.log(tip); // for testing purpose only
@@ -732,5 +733,5 @@ var johnEats = {
 
 };
 
+johnEats.calcTips();
 console.log(johnEats);
-console.log(johnEats.calcTips());
