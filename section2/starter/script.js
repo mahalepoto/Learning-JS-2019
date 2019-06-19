@@ -617,7 +617,7 @@ for (var i =0; i < john.length; i++) {
 }
 console.log(john.length); // checking array's length
 
-// ** Reverse looping Updated **
+// ** Reverse looping Updated 2 - Github email problem fixed **
 // Example one
 var john = ['John', 'Smith', 1990, 'Teacher', false];
 for (var i =4; i < john.length && i >=0; i--) {
