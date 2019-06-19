@@ -552,7 +552,7 @@ john.calcAge = function () {
  // console.log(john.calcAge());  **output undefined**
  john.calcAge();
  console.log(john)
-*/
+
 
  // 27-Coding chellenge 4
 // ** Creating objects through 'Object Literal' way.
@@ -594,38 +594,111 @@ if (john.johnBmi > mark.markBmi) {
 } else {
   console.log('John and Mark both have same BMI, John\'s BMI is ' + john.johnBmi + 'Mark\'s BMI is ' + mark.johnBmi);
 }
-
-
-/* *** Loops and Iteration ***
-Secton 2: Lecture 29
 */
-// Exmaple 1
-for (var i =0; i < 11; i++) {
-  console.log(i);
-}
 
-// Example 2
-for (var i =0; i < 20; i +=2) {
-  console.log(i);
-}
 
-// Example 3
+// /* *** Loops and Iteration ***
+// Secton 2: Lecture 29
+// */
+// // Exmaple 1
+// for (var i =0; i < 11; i++) {
+//   console.log(i);
+// }
+//
+// // Example 2
+// for (var i =0; i < 20; i +=2) {
+//   console.log(i);
+// }
+//
+// // Example 3
+// var john = ['John', 'Smith', 1990, 'Teacher', false];
+// for (var i =0; i < john.length; i++) {
+//   console.log(john[i]);
+//
+// }
+// console.log(john.length); // checking array's length
+//
+// // ** Reverse looping Updated 2 - Github email problem fixed **
+// // Example one
+// var john = ['John', 'Smith', 1990, 'Teacher', false];
+// for (var i =4; i < john.length && i >=0; i--) {
+//   console.log(john[i]);
+// }
+//
+// // Example two
+// var john = ['John1', 'Smith1', 1990, 'Teacher1', false];
+// for (var i = john.length-1; i >=0; i--) {
+//   console.log(john[i]);
+// }
+//
+// // *** Basic While loop and its format ***
+//
+// // Time table of 7
+// var table = 7;
+// var mult = 1;
+// while (mult <= 10) {
+//   console.log(table * mult);
+//   mult +=1;
+// }
+
+
+
+
+// ** continue and break in the loopin **
+
+/* *** continue ***
+We can use continue to print off selected elements that we want, only.
+e.g We can use continue when we want to select a specific type of element.
+Example
+*/
+// One way
 var john = ['John', 'Smith', 1990, 'Teacher', false];
-for (var i =0; i < john.length; i++) {
-  console.log(john[i]);
-
-}
-console.log(john.length); // checking array's length
-
-// ** Reverse looping Updated 2 - Github email problem fixed **
-// Example one
-var john = ['John', 'Smith', 1990, 'Teacher', false];
-for (var i =4; i < john.length && i >=0; i--) {
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] !== 'string') continue;
   console.log(john[i]);
 }
 
-// Example two
+// 2nd way..... continue with curly brackets.
 var john = ['John1', 'Smith1', 1990, 'Teacher1', false];
-for (var i = john.length-1; i >=0; i--) {
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] !== 'string') {  //So if condition is true it executes 'continue',skips
+    continue;                        //console.log statement and goes up to select another
+  } ;                               //element of array of john, when false it skips continue
+  console.log(john[i]);            //block and executes console.log statement.
+}
+
+// exprimenting with 'continue' with the help of for loop
+var john = ['John3', 'Smith3', 1991, 'Teacher3', false];
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] === 'string') {
+    continue;
+  }
+  console.log(john[i]);
+}
+
+// exprimenting with 'continue' with the help of for while loop
+// for now below code has errors
+/*
+var john = ['John4', 'Smith4', 1995, 'Teacher4', false];
+var a = 0;
+while (a < john.length) {
+  if (typeof john[a] === 'string') {
+    continue;
+  }
+  console.log(john[a]);
+  a++;
+}*/
+
+/* ** break **
+We can use break, when we want a specific type of element
+but when condition is not met it breaks loops completely,
+leaving remaining elements un-checked.
+*/
+// Example
+var john = ['John5', 'Smith5', 1990, 'Teacher5', false];
+for (var i = 0; i < john.length; i++) {
+  if (typeof john[i] !== 'string') {
+    break;
+  }
   console.log(john[i]);
 }
