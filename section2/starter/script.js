@@ -713,23 +713,21 @@ var johnEats = {
   allTips : [],
   totalPaid : [],
   calcTips : function () {
-    johnEats.allTips.unshift(tip);
     for (var i = 0; i < johnEats.bills.length; i++) {
       if (johnEats.bills[i] < 50) {
         var tip = johnEats.bills[i] * 0.2;
         console.log(tip); // for testing purpose only
-        //return this.allTips.push(tip);
+        this.allTips.push(tip);
       } else if (johnEats.bills[i] >=50 && johnEats.bills[i] <=200) {
           var tip= johnEats.bills[i] * 0.15;
           console.log(tip); // for testing purpose only
-          //return this.allTips.unshift(tip);
+          this.allTips.push(tip);
       } else {
          var tip = johnEats.bills[i] * 0.1;
          console.log(tip); // for testing purpose only
-         //return this.allTips.push(tip);
+         this.allTips.push(tip);
       }
     }
-
   }
 
 };
