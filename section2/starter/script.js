@@ -652,6 +652,7 @@ e.g We can use continue when we want to select a specific type of element.
 Example
 */
 // One way
+/*
 var john = ['John', 'Smith', 1990, 'Teacher', false];
 for (var i = 0; i < john.length; i++) {
   if (typeof john[i] !== 'string') continue;
@@ -695,10 +696,43 @@ but when condition is not met it breaks loops completely,
 leaving remaining elements un-checked.
 */
 // Example
+/*
 var john = ['John5', 'Smith5', 1990, 'Teacher5', false];
 for (var i = 0; i < john.length; i++) {
   if (typeof john[i] !== 'string') {
     break;
   }
   console.log(john[i]);
-}
+}*/
+
+
+// Section 2: Coding Challenge 5
+
+var johnEats = {
+  bills : [124, 48, 268, 180, 42],
+  allTips : [],
+  totalPaid : [],
+  calcTips : function () {
+    johnEats.allTips.unshift(tip);
+    for (var i = 0; i < johnEats.bills.length; i++) {
+      if (johnEats.bills[i] < 50) {
+        var tip = johnEats.bills[i] * 0.2;
+        console.log(tip); // for testing purpose only
+        //return this.allTips.push(tip);
+      } else if (johnEats.bills[i] >=50 && johnEats.bills[i] <=200) {
+          var tip= johnEats.bills[i] * 0.15;
+          console.log(tip); // for testing purpose only
+          //return this.allTips.unshift(tip);
+      } else {
+         var tip = johnEats.bills[i] * 0.1;
+         console.log(tip); // for testing purpose only
+         //return this.allTips.push(tip);
+      }
+    }
+
+  }
+
+};
+
+console.log(johnEats);
+console.log(johnEats.calcTips());
