@@ -617,7 +617,7 @@ for (var i =0; i < john.length; i++) {
 }
 console.log(john.length); // checking array's length
 
-// ** Reverse looping **
+// ** Reverse looping Updated **
 // Example one
 var john = ['John', 'Smith', 1990, 'Teacher', false];
 for (var i =4; i < john.length && i >=0; i--) {
