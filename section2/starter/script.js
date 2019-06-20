@@ -745,6 +745,7 @@ for (var i = 0; i < johnEats.allTips.length; i++) {
 console.log(johnEats); // for testing purpose only
 
 
+
 /* Mark's eating out spendings, achieving through
    initialising new object syntax.
 */
@@ -775,14 +776,32 @@ console.log(markEats);
 
 // Calculating the average for a given array
 function calcAvg(avg) {
+   var sum = 0;
   for (var i = 0; i < avg.length; i++) {
-    var sum = avg[i] + avg[i];
-    console.log(sum); // testing purpose only.
-    var average = sum / avg.lenght;
-    console.log(average); // testing purpose only.
+    sum += avg[i];
+    // console.log(sum); // test purpose only
+
   }
+  console.log(sum); // testing purpose only.
+  var average = sum / avg.length;
+  //console.log (average)// test purpose only.
+  return average;
 }
 
-// calling average function.
-var marksAvgTip = calcAvg(markEats.tips);
-console.log(marksAvgTip); // testing purpose only.
+// calling average of Marks family function.
+var marksFamilyAvg = calcAvg(markEats.tips);
+// console.log('Mark family\'s avg: tips '+marksFamilyAvg);
+
+
+// calling average of Johns family function.
+  var johnsFamilyAvg = calcAvg(johnEats.allTips);
+  // console.log('John family\'s avg: tips '+johnsFamilyAvg);
+
+// Comparing which paid highest avg: tips
+if (marksFamilyAvg > johnsFamilyAvg) {
+  console.log('Mark\'s family paid more in tips, they paid ' + marksFamilyAvg +'.'
++' Comparing John\'s family, they paid '+johnsFamilyAvg+'.');
+} else {
+  console.log('John\'s family paid more in tips, they paid ' + johnsFamilyAvg+'.'
++' Comparing Mark\'s family, they paid '+marksFamilyAvg+'.');
+}
