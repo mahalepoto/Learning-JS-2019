@@ -706,7 +706,7 @@ for (var i = 0; i < john.length; i++) {
 }*/
 
 
-// Section 2: Coding Challenge 5
+// ** Section 2: Coding Challenge 5 **
 
 // John eating out spendings
 var johnEats = {
@@ -734,7 +734,7 @@ var johnEats = {
 
 johnEats.calcTips();
 
-
+// Adding tips to the total spend array i.e 'totalPaid'.
 for (var i = 0; i < johnEats.allTips.length; i++) {
   for (var i = 0; i < johnEats.bills.length; i++) {
     var addTips = johnEats.allTips[i] + johnEats.bills[i];
@@ -743,3 +743,46 @@ for (var i = 0; i < johnEats.allTips.length; i++) {
 }
 // console.log(johnEats.totalPaid); // for testing purpose only
 console.log(johnEats); // for testing purpose only
+
+
+/* Mark's eating out spendings, achieving through
+   initialising new object syntax.
+*/
+var markEats = new Object();
+    markEats.bills = [77, 375, 110, 45];
+    markEats.tips = [];
+    markEats.calcTips = function () {
+      for (var i = 0; i < markEats.bills.length; i++) {
+      if (markEats.bills[i] < 100) {
+      var tip = markEats.bills[i] * 0.2;
+      // console.log(tip); // for testing purpose only
+      markEats.tips.push(tip); // inserting vlaues into empty array of tips.
+    } else if (markEats.bills[i] >= 100 && markEats.bills[i] <= 300) {
+      var tip = markEats.bills[i] * 0.1;
+      // console.log(tip); // for testing purpose only
+      markEats.tips.push(tip); // inserting vlaues into empty array of tips.
+    } else {
+      var tip = markEats.bills[i] * 0.25;
+      // console.log(tip); // for testing purpose only
+      markEats.tips.push(tip); // inserting vlaues into empty array of tips.
+    }
+  }
+}
+
+// markEats function calcTips call
+markEats.calcTips();
+console.log(markEats);
+
+// Calculating the average for a given array
+function calcAvg(avg) {
+  for (var i = 0; i < avg.length; i++) {
+    var sum = avg[i] + avg[i];
+    console.log(sum); // testing purpose only.
+    var average = sum / avg.lenght;
+    console.log(average); // testing purpose only.
+  }
+}
+
+// calling average function.
+var marksAvgTip = calcAvg(markEats.tips);
+console.log(marksAvgTip); // testing purpose only.
