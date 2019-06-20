@@ -708,6 +708,7 @@ for (var i = 0; i < john.length; i++) {
 
 // Section 2: Coding Challenge 5
 
+// John eating out spendings
 var johnEats = {
   bills : [124, 48, 268, 180, 42],
   allTips : [],
@@ -716,22 +717,29 @@ var johnEats = {
     for (var i = 0; i < johnEats.bills.length; i++) {
       if (johnEats.bills[i] < 50) {
         var tip = johnEats.bills[i] * 0.2;
-        console.log(tip); // for testing purpose only
+        // console.log(tip); // for testing purpose only
         this.allTips.push(tip);
       } else if (johnEats.bills[i] >=50 && johnEats.bills[i] <=200) {
           var tip= johnEats.bills[i] * 0.15;
-          console.log(tip); // for testing purpose only
+          // console.log(tip); // for testing purpose only
           this.allTips.push(tip);
-          //this.totalPaid = this.allTips.push(tip) + johnEats.bills[i];
       } else {
          var tip = johnEats.bills[i] * 0.1;
-         console.log(tip); // for testing purpose only
+         // console.log(tip); // for testing purpose only
          this.allTips.push(tip);
       }
     }
   }
-
 };
 
 johnEats.calcTips();
-console.log(johnEats);
+
+
+for (var i = 0; i < johnEats.allTips.length; i++) {
+  for (var i = 0; i < johnEats.bills.length; i++) {
+    var addTips = johnEats.allTips[i] + johnEats.bills[i];
+    johnEats.totalPaid.push(addTips);
+  }
+}
+// console.log(johnEats.totalPaid); // for testing purpose only
+console.log(johnEats); // for testing purpose only
