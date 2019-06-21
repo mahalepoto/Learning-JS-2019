@@ -711,6 +711,7 @@ for (var i = 0; i < john.length; i++) {
 // John eating out spendings
 /*
 var johnEats = {
+  fullName : 'John Smith',
   bills : [124, 48, 268, 180, 42],
   allTips : [],
   totalPaid : [],
@@ -753,6 +754,7 @@ console.log(johnEats); // for testing purpose only
 
 /*
 var markEats = new Object();
+    markEats.fullName = 'Mark Miller';
     markEats.bills = [77, 375, 110, 45];
     markEats.tips = [];
     markEats.calcTips = function () {
@@ -812,6 +814,7 @@ if (marksFamilyAvg > johnsFamilyAvg) {
 
 // Another way to solve johns tips, problem.
 var sam = {
+  fullName : 'Sam Jackson',
   bills : [124, 48, 268, 180, 42],
   tips : [],     // we can initiase empty array this or like on
   finalVals : [],// ...line 821 and 822
