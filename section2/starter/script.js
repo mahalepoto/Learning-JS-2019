@@ -709,6 +709,7 @@ for (var i = 0; i < john.length; i++) {
 // ** Section 2: Coding Challenge 5 **
 
 // John eating out spendings
+/*
 var johnEats = {
   bills : [124, 48, 268, 180, 42],
   allTips : [],
@@ -749,6 +750,8 @@ console.log(johnEats); // for testing purpose only
 /* Mark's eating out spendings, achieving through
    initialising new object syntax.
 */
+
+/*
 var markEats = new Object();
     markEats.bills = [77, 375, 110, 45];
     markEats.tips = [];
@@ -804,4 +807,37 @@ if (marksFamilyAvg > johnsFamilyAvg) {
 } else {
   console.log('John\'s family paid more in tips, they paid ' + johnsFamilyAvg+'.'
 +' Comparing Mark\'s family, they paid '+marksFamilyAvg+'.');
+} */
+
+
+// Another way to solve johns tips, problem.
+var sam = {
+  bills : [124, 48, 268, 180, 42],
+  tips : [],     // we can initiase empty array this or like on
+  finalVals : [],// ...line 821 and 822
+  // calculating percentage function methode
+  calTips : function() {
+    /*
+    this.tips = [];
+    this.finalVals = [];    */
+
+    for (var i = 0; i < this.bills.length; i++) {
+      var perct;
+
+      if (this.bills[i] < 50) {
+        perct = .2;
+      } else if (this.bills[i] >= 50 && this.bills[i] <= 200) {
+        perct = .15;
+      } else {
+        perct = .1;
+      }
+      // adding values in empty arrays
+      this.tips[i] = this.bills[i] * perct;
+      this.finalVals[i] = this.bills[i] + this.bills[i] * perct;
+    }
+  }
 }
+
+// calling the function method 'calTips'
+sam.calTips();
+console.log(sam);
